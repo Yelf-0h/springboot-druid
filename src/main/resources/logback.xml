@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="CONSOLE_LOG_PATTERN" value="%d %p [%X{traceId}] [%X{traceUser}] [%t] %C: %msg%n"/>
+    <property name="FILE_LOG_PATTERN" value="%d %p [%X{traceId}] [%X{traceUser}] [%t] %C: %msg%n"/>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <!-- 
+        1、name：用来指定受此logger约束的某一个包或者具体的一个类。
+        2、level：用来设置打印级别，五个常用打印级别从低到高一次为TRACE、DEBUG、INFO、WARN、ERROR。
+        3、additivity：是否向上级logger传递打印信息，默认为true。
+    -->
+    <!-- 这一句至关重要如果没有，就无法输出sql语句\ -->
+    <logger name="com.yecheng.springbootdruid.mapper" level="INFO"></logger>
+</configuration>
